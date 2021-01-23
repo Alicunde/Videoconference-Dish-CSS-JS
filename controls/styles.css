@@ -1,0 +1,36 @@
+/* Buttons */
+    .more,.less  {
+        cursor: pointer;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+        height: 60px;
+        width: 60px;
+        background: #00b8ff;
+        border-radius: 1000px;
+        position: absolute;
+        margin-left: 20px;
+        left: 50%;
+        top: 20px;
+    }
+    .less {
+        background: #ff0066;
+        margin-left: -80px;
+    }
+
+/* Icons Lines */
+    .more:before,
+    .more:after,
+    .less:after {
+        height: 2px;
+        width: 30px;
+        background: #fff;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -1px;
+        margin-left: -15px;
+    }
+    .more:before {
+        transform: rotate(90deg);
+    }
