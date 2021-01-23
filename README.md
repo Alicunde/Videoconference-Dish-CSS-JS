@@ -1,5 +1,5 @@
 # Videoconference-Dish
-## Dynamic plate for video conferencing.
+This script respects the Aspect Ratio, allows margins and does not use a grid. Lightweight and easy to understand.
 
 ![alt text](screenshots/a.png)
 
