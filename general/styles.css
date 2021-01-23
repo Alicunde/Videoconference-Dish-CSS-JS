@@ -10,3 +10,5 @@
         font-size: 0;
         box-sizing: border-box;
     }
+/* Link to Github */
+    a{ position: absolute; letter-spacing: 2px; margin: 20px; padding: 10px 15px; background: rgba(0,0,0,0.2); border-radius: 5px; display: block; text-decoration: none; color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 14px; right: 0; bottom: 0; z-index: 1000;;}
