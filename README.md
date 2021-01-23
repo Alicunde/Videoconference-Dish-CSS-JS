@@ -1,6 +1,6 @@
 # Videoconference-Dish
 This script respects the Aspect Ratio, allows margins and does not use a grid. Lightweight and easy to understand.
-
+ 
 ![alt text](screenshots/a.png)
 
 I have searched the internet a lot and I have not found this script. It just keeps the aspect ratio of a div and covers the largest area of its parent.
