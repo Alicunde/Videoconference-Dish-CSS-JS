@@ -17,7 +17,7 @@
     function Dish() {
 
         // variables:
-            let Margin = 10;
+            let Margin = 5;
             let Scenary = document.getElementById('Dish');
             let Width = Scenary.offsetWidth - (Margin * 2);
             let Height = Scenary.offsetHeight - (Margin * 2);
