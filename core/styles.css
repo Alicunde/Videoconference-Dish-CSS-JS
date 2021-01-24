@@ -23,6 +23,8 @@
         display: inline-block;
         box-shadow: 0px 12px 22px rgba(0, 0, 0, 0.4);
         background: #fff;
+        animation: show 0.4s ease;
+
     }
 /* Details (optional) */
     /* Aspect Ratio Number */
@@ -50,3 +52,14 @@
             display: block;
             ;
         }
+/* Animation */
+    @keyframes show {
+        0% {
+            opacity: 0;
+            transform: scale(0.4) translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
