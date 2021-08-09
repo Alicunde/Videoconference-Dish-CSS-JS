@@ -10,7 +10,7 @@
             w = w + Increment + (Margin * 2);
             i++;
         }
-        if (h > Height) return false;
+        if (h > Height || Increment > Width) return false;
         else return Increment;
     }
 // Dish:
