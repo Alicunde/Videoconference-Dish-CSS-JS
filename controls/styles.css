@@ -1,5 +1,5 @@
 /* Buttons */
-    .more,.less  {
+    .more,.less,.share  {
         cursor: pointer;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
         height: 60px;
@@ -7,16 +7,22 @@
         background: #00b8ff;
         border-radius: 1000px;
         position: absolute;
-        margin-left: 20px;
+        margin-left: -30px;
         left: 50%;
-        top: 20px;
+        top: 40px;
+    }
+    .share {
+        background: #80e670;
+        margin-left: 40px;
     }
     .less {
         background: #ff0066;
-        margin-left: -80px;
+        margin-left: -100px;
     }
 
 /* Icons Lines */
+    .share:before,
+    .share::after,
     .more:before,
     .more:after,
     .less:after {
@@ -33,4 +39,19 @@
     }
     .more:before {
         transform: rotate(90deg);
+    }
+
+/* Share box */
+    .share:before,
+    .share:after{
+        width: 20px;
+        margin-left: 0px;
+    }
+    .share:before {
+        transform:rotate(45deg);
+        margin-left: -2px;
+    }
+    .share:after {
+        margin-left: -15px;
+        transform: rotate(-45deg);
     }

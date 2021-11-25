@@ -13,6 +13,7 @@ The CSS is really basic, basically I have not wanted to fill this example with c
 
 If you see any errors, I would appreciate if you would indicate the improvement or the bug.
 
+![alt text](screenshots/e.png)
 ![alt text](screenshots/b.png)
 ![alt text](screenshots/c.png)
 ![alt text](screenshots/d.png)

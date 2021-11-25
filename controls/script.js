@@ -17,23 +17,51 @@ function add() {
     Dish();
 }
 
-window.addEventListener("load",function(event) {
-   
+
+// Function to add Camera
+function share() {
+    let screens = document.getElementsByClassName('Screen');
+    if(screens.length == 0){
+        let Screen = document.createElement('div');
+        Screen.className = 'Screen';
+        document.body.appendChild(Screen);
+        document.body.classList.add('sharing');
+    }
+    else{
+        document.body.removeChild(screens[0]);
+        document.body.classList.remove('sharing');
+    }
+    Dish();
+}
+
+
+window.addEventListener("load", function (event) {
+
+    // button to add new camera
     let Body = document.body;
     let Add = document.createElement('div');
-    Add.className='more';
-    Add.addEventListener("click",function(event) {
+    Add.className = 'more';
+    Add.addEventListener("click", function (event) {
         add();
     });
 
+    // button to delete last camera
     let Less = document.createElement('div');
-    Less.className='less';
-    Less.addEventListener("click",function(event) {
+    Less.className = 'less';
+    Less.addEventListener("click", function (event) {
         less();
     });
 
+    // button to add share screen
+    let Share = document.createElement('div');
+    Share.className = 'share';
+    Share.addEventListener("click", function (event) {
+        share();
+    });
 
+    // add buttons to body
     Body.appendChild(Add);
     Body.appendChild(Less);
+    Body.appendChild(Share);
 
-},false);
+}, false);

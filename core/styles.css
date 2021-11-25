@@ -12,9 +12,9 @@
         top: 0px;
         right: 0px;
     }
+
 /* Camera */
     #Dish div {
-
         position: relative;
         vertical-align: middle;
         align-self: center;
@@ -24,8 +24,8 @@
         box-shadow: 0px 12px 22px rgba(0, 0, 0, 0.4);
         background: #fff;
         animation: show 0.4s ease;
-
     }
+
 /* Details (optional) */
     /* Aspect Ratio Number */
         #Dish div:after {
@@ -50,6 +50,25 @@
             font-weight: 100;
             content: "4:3";
             display: block;
+        }
+
+/* Share Screen */
+    /* Screen */
+        .Screen{
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            top: 20px;
+            right: 420px;
+            background: #000;
+            opacity: 0.5;
+            border-radius: 10px;
+            z-index: -1;
+        }
+    /* Move Dish */
+        .sharing #Dish{
+            left: auto; width: 400px;
+            right: 10px;
         }
 /* Animation */
     @keyframes show {
