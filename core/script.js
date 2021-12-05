@@ -221,6 +221,7 @@ class Dish {
             video.autoplay = true;
             video.loop = true;
             video.muted = true;
+            video.playsinline = true;
             video.controls = false;
 
             // event to show video
