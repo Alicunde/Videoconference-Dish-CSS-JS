@@ -1,14 +1,27 @@
+/* Shadows */
+:root {
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.02),
+        0 8px 16px rgba(0, 0, 0, 0.02), 0 16px 32px rgba(0, 0, 0, 0.02), 0 32px 64px rgba(0, 0, 0, 0.02);
+    --shadow-medium: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.05),
+        0 8px 16px rgba(0, 0, 0, 0.05), 0 16px 32px rgba(0, 0, 0, 0.05), 0 32px 64px rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.1);
+    --shadow-black: 0 1px 2px rgba(34, 16, 16, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.3);
+}
+
 /* Scenary */
-    body,
-    html {
-        background: #9866ff;
-        margin: 0;
-        padding: 0;
-    }
+body,
+html {
+    background: rgb(0, 0, 255);
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* All */
-    * {
-        font-size: 0;
-        box-sizing: border-box;
-    }
-/* Link to Github */
-    a{ position: absolute; letter-spacing: 2px; margin: 20px; padding: 10px 15px; background: rgba(0,0,0,0.2); border-radius: 5px; display: block; text-decoration: none; color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 14px; right: 0; bottom: 0; z-index: 1000;;}
+* {
+    box-sizing: border-box;
+}

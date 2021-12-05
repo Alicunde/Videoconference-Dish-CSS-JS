@@ -1,57 +1,110 @@
-/* Buttons */
-    .more,.less,.share  {
-        cursor: pointer;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
-        height: 60px;
-        width: 60px;
-        background: #00b8ff;
-        border-radius: 1000px;
-        position: absolute;
-        margin-left: -30px;
-        left: 50%;
-        top: 40px;
-    }
-    .share {
-        background: #80e670;
-        margin-left: 40px;
-    }
-    .less {
-        background: #ff0066;
-        margin-left: -100px;
+.Controls {
+    right: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: var(--shadow-medium);
+}
+
+.Controls>.Button:first-child {
+    background: rgb(0, 0, 255);
+    color: #fff;
+}
+
+.Controls>.Button:nth-child(2) {
+    background: rgb(246, 125, 125);
+    color: #fff;
+}
+
+.Controls .Button i {
+    font-size: 20px;
+}
+
+.Controls .Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    box-shadow: var(--shadow-medium);
+    background: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    user-select: none;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.Controls .Button.active:after {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgb(14, 211, 165);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
     }
 
-/* Icons Lines */
-    .share:before,
-    .share::after,
-    .more:before,
-    .more:after,
-    .less:after {
-        height: 2px;
-        width: 30px;
-        background: #fff;
-        content: "";
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-top: -1px;
-        margin-left: -15px;
-    }
-    .more:before {
-        transform: rotate(90deg);
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(51, 217, 178, 0);
     }
 
-/* Share box */
-    .share:before,
-    .share:after{
-        width: 20px;
-        margin-left: 0px;
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
     }
-    .share:before {
-        transform:rotate(45deg);
-        margin-left: -2px;
-    }
-    .share:after {
-        margin-left: -15px;
-        transform: rotate(-45deg);
-    }
+}
+
+.Controls .Group {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.Controls .Options {
+    display: flex;
+    gap: 10px;
+}
+
+.Controls .Options div {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.Controls .Link {
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.Controls .Link i {
+    margin-left: 10px;
+    font-size: 30px;
+}

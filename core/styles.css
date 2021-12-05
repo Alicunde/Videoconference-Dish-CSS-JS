@@ -1,83 +1,123 @@
-/* Container */
-    #Dish {
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        vertical-align: middle;
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        top: 0px;
-        right: 0px;
-    }
+.Scenary {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 120px;
+    gap: 20px;
+}
+
+/* Container of Screen and Dish */
+.Conference {
+    display: flex;
+    flex: 1;
+    border-radius: 10px;
+    gap: 20px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Container of Cameras */
+.Dish {
+    overflow: scroll;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: 1;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+
+
+}
 
 /* Camera */
-    #Dish div {
-        position: relative;
-        vertical-align: middle;
-        align-self: center;
-        border-radius: 10px;
-        overflow: hidden;
-        display: inline-block;
-        box-shadow: 0px 12px 22px rgba(0, 0, 0, 0.4);
-        background: #fff;
-        animation: show 0.4s ease;
+.Dish>div {
+    position: relative;
+    vertical-align: middle;
+    align-self: center;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: var(--shadow-dark);
+    background: #fff;
+    animation: show 0.4s ease;
+}
+
+/* Video (check the nice property object-fit) */
+.Dish>div video {
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    overflow: hidden;
+    -webkit-transition: margin-top 1s ease-in-out;
+    -moz-transition: margin-top 1s ease-in-out;
+    -o-transition: margin-top 1s ease-in-out;
+    transition: margin-top 1s ease-in-out;
+}
+
+/* Animation of Loading Video */
+.Dish>div video.loading {
+    margin-top: 100%;
+}
+
+/* Aspect Ratio Number */
+.Dish div:after {
+    color: #aaa;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 23px;
+    font-weight: 100;
+    content: attr(data-aspect);
+    display: block;
+}
+
+/* Gray Diagonal */
+.Dish div:before {
+    position: absolute;
+    height: 100%;
+    background: url(./../general/diagonal.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    opacity: 0.3;
+    font-weight: 100;
+    content: '';
+    display: block;
+}
+
+/* Screen */
+.Screen {
+    flex: 2;
+    background: #000;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+/* Animation of Cameras */
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.4) translateY(20px);
     }
 
-/* Details (optional) */
-    /* Aspect Ratio Number */
-        #Dish div:after {
-            color: #aaa;
-            font-size: 13px;
-            font-family: Arial, Helvetica, sans-serif;
-            position: absolute;
-            bottom: 20px;
-            right: 23px;
-            font-weight: 100;
-            content: "4:3";
-            display: block;
-        }
-    /* Gray Diagonal */
-        #Dish div:before {
-            position: absolute;
-            height: 1px;
-            background: #ddd;
-            width: 100%;
-            transform: rotate(-37deg);
-            top: 50%;
-            font-weight: 100;
-            content: "4:3";
-            display: block;
-        }
-
-/* Share Screen */
-    /* Screen */
-        .Screen{
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            top: 20px;
-            right: 420px;
-            background: #000;
-            opacity: 0.5;
-            border-radius: 10px;
-            z-index: -1;
-        }
-    /* Move Dish */
-        .sharing #Dish{
-            left: auto; width: 400px;
-            right: 10px;
-        }
-/* Animation */
-    @keyframes show {
-        0% {
-            opacity: 0;
-            transform: scale(0.4) translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
     }
+}
