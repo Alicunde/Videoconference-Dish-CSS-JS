@@ -4,6 +4,7 @@ class Controls {
     _dish = false
     _scenary = false
     _controls = []
+    _videos = true
 
     // contruct the controls
     constructor(dish, scenary) {
@@ -18,7 +19,7 @@ class Controls {
         this.controllers();
 
         // run videos (demo)
-        this.videos();
+        this.videos(100);
 
     }
 
@@ -26,6 +27,10 @@ class Controls {
         // create add button
         this.button(false, 'plus', () => {
             this._dish.add();
+            if (this._videos) {
+                this.videos();
+            }
+
         })
 
         // create remove button
@@ -39,8 +44,10 @@ class Controls {
             // add active class
             element.classList.toggle('active');
 
+            // set status of videos (totally for demo)
+            this._videos = !this._videos;
             // generate videos
-            this.videos();
+            this.videos(0, !this._videos);
 
         }, true)
 
@@ -137,7 +144,7 @@ class Controls {
     }
 
     // execute random videos (demo)
-    videos() {
+    videos(delay = 0, hide = false) {
         // get number of cameras
         let cameras = this._dish.cameras();
 
@@ -159,9 +166,9 @@ class Controls {
                         element.classList.remove('loading');
                     }, 100);
 
-                });
+                }, hide);
 
-            }, 100 * i, this, i);
+            }, delay * i, this, i);
 
             i++;
         }
@@ -181,9 +188,13 @@ class Controls {
 
                 // add new camera
                 that._dish.add();
+                if (that._videos) {
+                    that.videos();
+                }
 
             }, i * interval, this)
         }
+
 
     }
 

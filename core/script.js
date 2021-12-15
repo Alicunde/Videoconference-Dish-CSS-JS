@@ -199,17 +199,19 @@ class Dish {
         this.resize();
     }
 
-    video(camera, callback) {
+    video(camera, callback, hide = false) {
 
-        let videos = this._dish.children[camera].querySelectorAll('video');
-
-        // check exist video
-        if (videos.length) {
-
-            // delete video:
-            this._dish.children[camera].removeChild(videos[0]);
-
+        // check have video
+        if (this._dish.children[camera].video) {
+            if (hide) {
+                // delete video:
+                this._dish.children[camera].video = false
+                let videos = this._dish.children[camera].querySelectorAll('video');
+                this._dish.children[camera].removeChild(videos[0]);
+            }
         } else {
+            // set video
+            this._dish.children[camera].video = true
 
             // create video
             let video = document.createElement('video');
